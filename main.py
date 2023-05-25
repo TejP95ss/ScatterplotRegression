@@ -60,5 +60,6 @@ plt.title("20 Day Realized Volatility SPX vs. VIX from 1/1/2000 to 12/1/2022")
 plt.xlabel("VIX")
 plt.ylabel("20 Day Realized Volatility SPX")
 plt.show()
+
 end = time.time()
 print(end - start)
