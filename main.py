@@ -3,17 +3,7 @@ import pandas as pd
 import math
 import statistics
 import numpy as np
-'''
-import yfinance as yf
-start_date = '2000-01-01'
-end_date = '2023-01-01'
-ticker = 'SPY'
-Spy = yf.download(ticker, start_date, end_date)['Close']
-Spy.to_csv(f"{ticker}.csv")
-ticker2 = '^VIX'
-Vix = yf.download(ticker2, start_date, end_date)['Close']
-Vix.to_csv(f"{ticker2}.csv")
-'''
+
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
 PercentChanges = []
