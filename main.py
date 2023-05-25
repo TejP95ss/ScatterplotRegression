@@ -3,7 +3,7 @@ import pandas as pd
 import math
 import statistics
 import numpy as np
-
+import time
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
 PercentChanges = []
