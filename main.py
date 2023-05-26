@@ -4,10 +4,10 @@ import math
 import statistics
 import numpy as np
 import yfinance as yf
-
+#The following 8 lines gather the ~22 years worth of SPX and VIX daily closes
 start_date = '2000-01-01'
 end_date = '2023-01-01'
-ticker = 'SPY'
+ticker = '^SPX'
 Spy = yf.download(ticker, start_date, end_date)['Close']
 Spy.to_csv(f"{ticker}.csv")
 ticker2 = '^VIX'
