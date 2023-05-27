@@ -4,6 +4,7 @@ import math
 import statistics
 import numpy as np
 import yfinance as yf
+from datetime import datetime
 
 start_date = '2000-01-01'
 end_date = '2023-01-01'
@@ -16,6 +17,19 @@ Vix.to_csv(f"{ticker2}.csv")
 
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
+VIXDates = []
+SPXDates = []
+for x in range(5786):
+    VIXdate = Vix.iloc[x, 0]
+    SPXdate = SPX.iloc[x, 0]
+    ParsedVIXDate = datetime.strptime(VIXdate, '%Y-%m-%d')
+    ParsedSPXDate = datetime.strptime(SPXdate, '%Y-%m-%d')
+    VIXDates.append(ParsedVIXDate)
+    SPXDates.append(ParsedSPXDate)
+if VIXDates[90] == SPXDates[90]:
+    print(True)
+
+'''
 PercentChanges = []
 for x in range(5786):
     j = SPX.iloc[x, 1]
@@ -57,4 +71,4 @@ plt.scatter(VIXList, NewHVOL, c=np.random.rand(1, len(NewHVOL)))
 plt.title("20 Day Realized Volatility SPX vs. VIX from 1/1/2000 to 12/1/2022")
 plt.xlabel("VIX")
 plt.ylabel("20 Day Realized Volatility SPX")
-plt.show()
+plt.show()'''
