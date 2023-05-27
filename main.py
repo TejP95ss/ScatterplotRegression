@@ -14,15 +14,6 @@ Spy.to_csv(f"{ticker}.csv")
 ticker2 = '^VIX'
 Vix = yf.download(ticker2, start_date, end_date)['Close']
 Vix.to_csv(f"{ticker2}.csv")
-VIXDates = []
-SPXDates = []
-for x in range(8314):
-    VIXdate = Vix.iloc[x, 0]
-    SPXdate = SPX.iloc[x, 0]
-    ParsedVIXDate = datetime.strptime(VIXdate, '%Y-%m-%d')
-    ParsedSPXDate = datetime.strptime(SPXdate, '%Y-%m-%d')
-    VIXDates.append(ParsedVIXDate)
-    SPXDates.append(ParsedSPXDate)
 '''
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
