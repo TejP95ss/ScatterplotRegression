@@ -24,7 +24,6 @@ for x in range(8314):
     VIXDates.append(ParsedVIXDate)
     SPXDates.append(ParsedSPXDate)
 '''
-
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
 PercentChanges = []
@@ -56,18 +55,11 @@ for i in range(8295):
 matrix = np.corrcoef(VIXList, NewHVOL)
 corr = matrix[0,  1]
 print(corr*corr)
-print(NewHVOL)
-print(VIXList)
-counter = 0
-for j in range(len(VIXList)):
-    if NewHVOL[j] > VIXList[j] + 10:
-        counter += 1
-print(round(counter/len(VIXList), 3))
 a, b = np.polyfit(VIXList, NewHVOL, 1)
 ArrayVix = np.array(VIXList)
 plt.plot(ArrayVix, (a*ArrayVix) + b, color="red")
 plt.scatter(VIXList, NewHVOL, c=np.random.rand(1, len(NewHVOL)))
-plt.title("20 Day Realized Volatility SPX vs. VIX from 1/1/2000 to 12/1/2022")
+plt.title("20 Day Realized Volatility SPX vs. VIX from 1/2/1990 to 12/1/2022")
 plt.xlabel("VIX")
 plt.ylabel("20 Day Realized Volatility SPX")
 plt.show()
