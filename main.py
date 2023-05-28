@@ -33,6 +33,7 @@ for x in range(8315):
         MegaList[Counter].append(PercentChanges[x])
 
 '''
+This part is hashed out for the moment to decrease time needed to run the program
 start_date = '1990-01-01'
 end_date = '2023-01-01'
 ticker = '^SPX'
