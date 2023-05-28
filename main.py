@@ -9,6 +9,7 @@ from datetime import datetime
 Year = 1990
 Counter = 0
 Dates = []
+# Creates 33 lists for the 33 years.
 MegaList = [[] for _ in range(33)]
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
