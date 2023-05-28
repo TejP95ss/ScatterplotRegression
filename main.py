@@ -5,6 +5,8 @@ import statistics
 import numpy as np
 import yfinance as yf
 from datetime import datetime
+#The following two variables are declared to help separate 
+#percent changes into years.
 Year = 1990
 Counter = 0
 Dates = []
