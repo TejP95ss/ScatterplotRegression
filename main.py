@@ -12,8 +12,8 @@ Dates = []
 # Creates 33 lists for the 33 years.
 MegaList = [[] for _ in range(33)]
 # next 2 lines assigns variables to the 2 different CSV files containing the data
-SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
-Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
+SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\ScatterplotRegression\^SPX.csv")
+Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\ScatterplotRegression\^VIX.csv")
 PercentChanges = []
 for x in range(8314):
     j = SPX.iloc[x, 1]
@@ -21,7 +21,6 @@ for x in range(8314):
     PercentChange = ((i/j) - 1) * 100
     PercentChanges.append(round(PercentChange, 3))
 PercentChanges.insert(0, 1.78)
-PercentChanges.append(-.25)
 for x in range(8315):
     Date = SPX.iloc[x, 0]
     CalendarDate = datetime.strptime(Date, '%Y-%m-%d')
@@ -34,7 +33,6 @@ for x in range(8315):
         Year += 1
         Counter += 1
         MegaList[Counter].append(PercentChanges[x])
-
 
 '''
 This part is hashed out for the moment to decrease time needed to run the program
