@@ -37,6 +37,7 @@ for x in range(8315):
 
 '''
 This part is hashed out for the moment to decrease time needed to run the program
+# The following 8 lines gather the 33 years worth of close data in SPX and VIX
 start_date = '1990-01-01'
 end_date = '2023-01-01'
 ticker = '^SPX'
