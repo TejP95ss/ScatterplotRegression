@@ -71,6 +71,8 @@ corr = matrix[0,  1]
 print(corr*corr)
 a, b = np.polyfit(VIXList, NewHVOL, 1)
 ArrayVix = np.array(VIXList)
+# The following lines are there to plot the line of best fit and the scatter plot.
+# Labels and title are also provided to the graph by the following lines
 plt.plot(ArrayVix, (a*ArrayVix) + b, color="red")
 plt.scatter(VIXList, NewHVOL, c=np.random.rand(1, len(NewHVOL)))
 plt.title("20 Day Realized Volatility SPX vs. VIX from 1/2/1990 to 12/1/2022")
