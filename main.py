@@ -11,6 +11,7 @@ Counter = 0
 Dates = []
 # Creates 33 lists for the 33 years.
 MegaList = [[] for _ in range(33)]
+# next 2 lines assigns variables to the 2 different CSV files containing the data
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\TestProject\^VIX.csv")
 PercentChanges = []
