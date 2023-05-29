@@ -42,8 +42,8 @@ This part is hashed out for the moment to decrease time needed to run the progra
 start_date = '1990-01-01'
 end_date = '2023-01-01'
 ticker = '^SPX'
-Spy = yf.download(ticker, start_date, end_date)['Close']
-Spy.to_csv(f"{ticker}.csv")
+Spx = yf.download(ticker, start_date, end_date)['Close']
+Spx.to_csv(f"{ticker}.csv")
 ticker2 = '^VIX'
 Vix = yf.download(ticker2, start_date, end_date)['Close']
 Vix.to_csv(f"{ticker2}.csv")
