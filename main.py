@@ -9,6 +9,7 @@ from datetime import datetime
 Year = 1990
 Counter = 0
 Dates = []
+
 # Creates 33 lists for the 33 years.
 MegaList = [[] for _ in range(33)]
 # next 2 lines assigns variables to the 2 different CSV files containing the data
