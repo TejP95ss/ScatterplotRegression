@@ -4,6 +4,7 @@ import math
 import statistics
 import numpy as np
 import yfinance as yf
+# The following 8 lines gather the 33 years worth of close data in SPX and VIX
 '''start_date = '1990-01-01'
 end_date = '2023-01-01'
 ticker = '^SPX'
@@ -15,6 +16,7 @@ Vix.to_csv(f"{ticker2}.csv")'''
 # next 2 lines assigns variables to the 2 different CSV files containing the data
 SPX = pd.read_csv(r"C:\Users\ashis\PycharmProjects\ScatterplotRegression\^SPX.csv")
 Vix = pd.read_csv(r"C:\Users\ashis\PycharmProjects\ScatterplotRegression\^VIX.csv")
+# Following 7 lines calculate the daily percent changes and add them to a list
 PercentChanges = []
 for x in range(8314):
     j = SPX.iloc[x, 1]
@@ -22,7 +24,7 @@ for x in range(8314):
     PercentChange = ((i/j) - 1) * 100
     PercentChanges.append(round(PercentChange, 3))
 PercentChanges.insert(0, 1.78)
-# The following 8 lines gather the 33 years worth of close data in SPX and VIX
+# Next 11 lines calculate the 20-day historical volatility in SPX over the past 33 years.
 HistoricalVol = []
 for y in range(8295):
     Changes = []
