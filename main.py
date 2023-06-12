@@ -3,6 +3,7 @@ import pandas as pd
 import math
 import statistics
 import numpy as np
+import scipy
 import yfinance as yf
 # The following 8 lines gather the 33 years worth of close data in SPX and VIX
 '''start_date = '1990-01-01'
@@ -38,20 +39,22 @@ for y in range(8295):
     HistoricalVol.append(round(HVOL, 3))
 VIXList = []
 NewHVOL = []
+Counter = 0
 for i in range(8295):
     j = Vix.iloc[i, 1]
     k = HistoricalVol[i]
-    if j > 0:
+    if (j-5) < k < (j+5):
         VIXList.append(round(j, 3))
         NewHVOL.append(HistoricalVol[i])
-matrix = np.corrcoef(VIXList, NewHVOL)
-corr = matrix[0,  1]
-print(corr*corr)
-a, b = np.polyfit(VIXList, NewHVOL, 1)
-ArrayVix = np.array(VIXList)
+        Counter += 1
+    if i == 8294:
+        print(Counter/8294)
+ArrayVIX = np.array(VIXList)
+Slope, Int, R_Value, P_Value, StdErr = scipy.stats.linregress(NewHVOL, VIXList)
+print(R_Value)
 # The following lines are there to plot the line of best fit and the scatter plot.
 # Labels and title are also provided to the graph by the following lines
-plt.plot(ArrayVix, (a*ArrayVix) + b, color="red")
+plt.plot(ArrayVIX, (Slope*ArrayVIX) + Int, color="red")
 plt.scatter(VIXList, NewHVOL, c=np.random.rand(1, len(NewHVOL)))
 plt.title("20 Day Realized Volatility SPX vs. VIX from 1/2/1990 to 12/1/2022")
 plt.xlabel("VIX")
