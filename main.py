@@ -39,19 +39,21 @@ for y in range(8295):
     HistoricalVol.append(round(HVOL, 3))
 VIXList = []
 NewHVOL = []
+# Following for loop appends values into new Historical Vol. and Vix lists based if a certain criteria is met
 Counter = 0
 for i in range(8295):
     j = Vix.iloc[i, 1]
     k = HistoricalVol[i]
-    if (j-5) < k < (j+5):
+    if (j-500) < k < (j+500):
         VIXList.append(round(j, 3))
         NewHVOL.append(HistoricalVol[i])
         Counter += 1
     if i == 8294:
-        print(Counter/8294)
+        print(Counter)
+        print(Counter/8295)
 ArrayVIX = np.array(VIXList)
-Slope, Int, R_Value, P_Value, StdErr = scipy.stats.linregress(NewHVOL, VIXList)
-print(R_Value)
+Slope, Int, R_Value, P_Value, StdErr = scipy.stats.linregress(VIXList, NewHVOL)
+print(R_Value**2)
 # The following lines are there to plot the line of best fit and the scatter plot.
 # Labels and title are also provided to the graph by the following lines
 plt.plot(ArrayVIX, (Slope*ArrayVIX) + Int, color="red")
