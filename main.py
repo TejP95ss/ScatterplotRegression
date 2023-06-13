@@ -51,11 +51,11 @@ for i in range(8295):
     if i == 8294:
         print(Counter/8295)
 ArrayVIX = np.array(VIXList)
-Result = scipy.stats.linregress(VIXList, NewHVOL)
-print(Result.rvalue**2)
+LinearRegression = scipy.stats.linregress(VIXList, NewHVOL)
+print(LinearRegression.rvalue**2)
 # The following lines are there to plot the line of best fit and the scatter plot.
 # Labels and title are also provided to the graph by the following lines
-plt.plot(ArrayVIX, (Result.slope*ArrayVIX) + Result.intercept, color="red")
+plt.plot(ArrayVIX, (LinearRegression.slope*ArrayVIX) + LinearRegression.intercept, color="red")
 plt.scatter(VIXList, NewHVOL, c=np.random.rand(1, len(NewHVOL)))
 plt.title("20 Day Realized Volatility SPX vs. VIX from 1/2/1990 to 12/1/2022")
 plt.xlabel("VIX")
